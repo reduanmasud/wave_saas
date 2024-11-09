@@ -47,7 +47,7 @@
                         <b>Price:</b> {{$server['hourly_price']}} BDT/hr
                     </p>
                 
-                    <a href="/product/buy/{{$server['id']}}" class="mt-6 bg-blue-600 hover:bg-blue-700 text-center text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 ease-in-out shadow-sm hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
+                    <a href="/server/buy/{{$server['id']}}" class="mt-6 bg-blue-600 hover:bg-blue-700 text-center text-white font-bold py-2 px-4 rounded-lg transition-colors duration-200 ease-in-out shadow-sm hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800">
                         Select
                     </a>
                 </div>
