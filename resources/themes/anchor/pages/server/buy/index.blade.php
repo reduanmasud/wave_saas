@@ -4,9 +4,7 @@
 	middleware('auth');
     name('products');
 ?>
-@php
-    // $servers = 
-@endphp
+
 <x-layouts.app>
 	<x-app.container x-data class="lg:space-y-6" x-cloak>
         

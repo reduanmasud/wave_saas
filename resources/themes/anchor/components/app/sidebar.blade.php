@@ -31,7 +31,7 @@
 
                 <div class="flex flex-col justify-start items-center px-4 space-y-1.5 w-full h-full text-slate-600 dark:text-zinc-400">
                     <x-app.sidebar-link href="/dashboard" icon="phosphor-stack" :active="Request::is('dashboard')">Dashboard</x-app.sidebar-link>
-                    <x-app.sidebar-dropdown text="Servers" icon="phosphor-stack" id="server_dropdown" :active="(Request::is('server'))" :open="(Request::is('server') || Request::is('server/buy') || Request::is('project_c')) ? '1' : '0'">
+                    <x-app.sidebar-dropdown text="Servers" icon="phosphor-cloud" id="server_dropdown" :active="(Request::is('server'))" :open="(Request::is('server') || Request::is('server/buy') || Request::is('project_c')) ? '1' : '0'">
                         <x-app.sidebar-link href='/server' icon="phosphor-cube" :active="(Request::is('server'))">My Server</x-app.sidebar-link>
                         <x-app.sidebar-link href='/server/buy' icon="phosphor-cube" :active="(Request::is('server/buy'))">Buy</x-app.sidebar-link>
                     </x-app.sidebar-dropdown>
@@ -41,10 +41,10 @@
                         <x-app.sidebar-link onclick="event.preventDefault(); new FilamentNotification().title('Modify this button inside of sidebar.blade.php').send()" icon="phosphor-cube" :active="(Request::is('project_b'))">Project B</x-app.sidebar-link>
                         <x-app.sidebar-link onclick="event.preventDefault(); new FilamentNotification().title('Modify this button inside of sidebar.blade.php').send()" icon="phosphor-cube" :active="(Request::is('project_c'))">Project C</x-app.sidebar-link>
                     </x-app.sidebar-dropdown> --}}
-                    @admin
+                    {{-- @admin
                     <x-app.sidebar-link onclick="event.preventDefault(); new FilamentNotification().title('Modify this button inside of sidebar.blade.php').send()" icon="phosphor-pencil-line" active="false">Stories</x-app.sidebar-link>
                     <x-app.sidebar-link  onclick="event.preventDefault(); new FilamentNotification().title('Modify this button inside of sidebar.blade.php').send()" icon="phosphor-users" active="false">Users</x-app.sidebar-link>
-                    @endadmin
+                    @endadmin --}}
                 </div>
             </div>
 
