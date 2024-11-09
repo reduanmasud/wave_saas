@@ -24,7 +24,15 @@
 		</div>
 
 		<div class="mt-5 space-y-5">
-			@subscriber
+			<a href="http://">Buy Server</a>
+			<p>We are handling the payment part manually.</p>
+			<ul type='disc'>
+				<li>First Pay for the server you want. Or you can buy server in an advance</li>
+				<li>Withing 1 hour we will verify your payment.</li>
+				<li>Now you will be able to create server.</li>
+			</ul>
+
+			{{-- @subscriber
 				<p>You are a subscribed user with the <strong>{{ auth()->user()->roles()->first()->name }}</strong> role. Learn <a href="https://devdojo.com/wave/docs/features/roles-permissions" target="_blank" class="underline">more about roles</a> here.</p>
 				<x-app.message-for-subscriber />
 			@else
@@ -33,7 +41,7 @@
 			
 			@admin
 				<x-app.message-for-admin />
-			@endadmin
+			@endadmin --}}
 		</div>
     </x-app.container>
 </x-layouts.app>
