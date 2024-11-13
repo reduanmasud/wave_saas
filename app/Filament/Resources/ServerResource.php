@@ -29,7 +29,7 @@ class ServerResource extends Resource
                 TextInput::make('server_name'),
                 TextInput::make('ram'),
                 TextInput::make('vcpu'),
-                TextInput::make('slag'),
+                TextInput::make('slug'),
                 TextInput::make('disk_storage'),
                 TextInput::make('hourly_price'),
                 TextInput::make('provider_price'),
@@ -44,7 +44,7 @@ class ServerResource extends Resource
                 TextColumn::make('server_name'),
                 TextColumn::make('ram'),
                 TextColumn::make('vcpu'),
-                TextColumn::make('slag'),
+                TextColumn::make('slug'),
                 TextColumn::make('provider_price'),
                 TextColumn::make('hourly_price')
             ])

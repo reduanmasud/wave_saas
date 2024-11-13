@@ -13,8 +13,17 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->float('price');
+            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('server_id')->constrained('servers');
+            $table->double('base_price');
+            $table->string('product_type')->default('server');
+            $table->timestamp('provisioned_at')->nullable();
+            $table->timestamp('destoryed_at')->nullable();
+            $table->string('trxID');
+            $table->integer('durations');
+            $table->double('total_price');
+            $table->timestamp('verified_at')->nullable();
+            $table->foreignId('verified_by')->nullable()->constrained('users');
             $table->timestamps();
         });
     }
@@ -24,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('product');
+        Schema::dropIfExists('products');
     }
 };

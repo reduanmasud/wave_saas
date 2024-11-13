@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('servers', function (Blueprint $table) {
             $table->id();
             $table->string('server_name');
+            $table->uuid('uuid')->unique();
             $table->float('hourly_price');
-            $table->string('slag');
+            $table->string('slug');
             $table->string('ram');
             $table->string('vcpu');
             $table->string('disk_storage');

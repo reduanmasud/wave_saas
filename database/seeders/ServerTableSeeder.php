@@ -41,17 +41,17 @@ class ServerTableSeeder extends Seeder
 
         $count = 1;
         foreach ($selectedPlans as $plan) {
-            $providerPrice = ceil(($plan['monthly_cost'] / 672) * 125);
+            $providerPrice = ceil(($plan['monthly_cost'] / 30) * 125);
             $price = $providerPrice + $providerPrice * 0.5;
             DB::table('servers')->insert(array(
                 'server_name' => 'Server '.$count++,
-                'slag'  => $plan['id'],
+                'slug'  => $plan['id'],
                 'ram'   => $plan['ram'] / 1024,
                 'vcpu'  => $plan['vcpu_count'],
                 'disk_storage'  => $plan['disk'],
                 'server_provider'   => 'VULTR',
-                'provider_price'    => $providerPrice,
-                'hourly_price' => $price,
+                'provider_price'    => $price,
+                'hourly_price' => $price/24,
                 'created_at' => now(),
                 'updated_at' => now(),
             ));
