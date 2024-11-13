@@ -36,7 +36,6 @@ class ProductController extends Controller
 
         // Create a new order or perform any other necessary actions
         $product = Product::create($productData);
-        dd($product);
         // Redirect back or return a response
         return redirect()->back();
     }
