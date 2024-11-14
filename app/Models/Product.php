@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
 {
@@ -43,6 +44,10 @@ class Product extends Model
         'total_price' => 'double',
     ];
 
+    public function isVerified(): bool
+    {
+        return $this->verified_at !== null;
+    }
 
     /**
      * Get the user that owns the product.
@@ -58,6 +63,18 @@ class Product extends Model
     public function server(): BelongsTo
     {
         return $this->belongsTo(Server::class);
+    }
+
+    public function verifiedBy()
+    {
+        return $this->belongsTo(User::class, 'verified_by');
+    }
+
+    public function verify()
+    {
+        $this->verified_at = now();
+        $this->verified_by = Auth::id();
+        $this->save(); 
     }
 
 }
