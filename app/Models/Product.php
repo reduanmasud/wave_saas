@@ -10,12 +10,15 @@ class Product extends Model
     // use HasUlids;
 
     protected $fillable = [
+        'uuid', 
         'product_name',
         'hourly_price',
         'ram',
         'vcpu',
         'disk_storage',
+        'slug', 
         'product_provider',
+        'provider_price'
     ];
 
     

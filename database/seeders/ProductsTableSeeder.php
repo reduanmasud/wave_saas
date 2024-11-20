@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 
 
-class ServerTableSeeder extends Seeder
+class ProductsTableSeeder extends Seeder
 {
 
     /**
@@ -21,7 +21,7 @@ class ServerTableSeeder extends Seeder
     {
 
 
-        DB::table('servers')->delete();
+        DB::table('products')->delete();
 
         $apiKey = env('VULTR_API_KEY');
 
@@ -43,13 +43,14 @@ class ServerTableSeeder extends Seeder
         foreach ($selectedPlans as $plan) {
             $providerPrice = ceil(($plan['monthly_cost'] / 30) * 125);
             $price = $providerPrice + $providerPrice * 0.5;
-            DB::table('servers')->insert(array(
-                'server_name' => 'Server '.$count++,
+            DB::table('products')->insert(array(
+                'product_name' => 'Product '.$count++,
+                'uuid' => Str::uuid(),
                 'slug'  => $plan['id'],
                 'ram'   => $plan['ram'] / 1024,
                 'vcpu'  => $plan['vcpu_count'],
                 'disk_storage'  => $plan['disk'],
-                'server_provider'   => 'VULTR',
+                'product_provider'   => 'VULTR',
                 'provider_price'    => $price,
                 'hourly_price' => $price/24,
                 'created_at' => now(),

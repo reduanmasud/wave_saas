@@ -6,7 +6,7 @@ use App\Filament\Resources\ServerResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
-class ListServers extends ListRecords
+class ListProducts extends ListRecords
 {
     protected static string $resource = ServerResource::class;
 
