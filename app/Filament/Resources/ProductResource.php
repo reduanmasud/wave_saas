@@ -124,7 +124,7 @@ class ProductResource extends Resource
                 Action::make('verify')
                     ->action(function (Product $record) {
                         $record->verify();
-                    })
+                    })->icon('heroicon-s-star')
 
             ])
             ->bulkActions([

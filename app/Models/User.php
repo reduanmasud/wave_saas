@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 use Wave\User as WaveUser;
 use Illuminate\Notifications\Notifiable;
@@ -67,4 +68,13 @@ class User extends WaveUser
             $user->assignRole( config('wave.default_user_role', 'registered') );
         });
     }
+
+    public function products():HasMany {
+        return $this->hasMany(Product::class);
+    }
+
+    public function instances(): HasMany {
+        return $this->hasMany(Instance::class);
+    }
+    
 }

@@ -70,7 +70,6 @@ class User extends AuthUser implements JWTSubject, HasAvatar, FilamentUser
         return true;
     }
 
-    
 
     public function subscriptions()
     {

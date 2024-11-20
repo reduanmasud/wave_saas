@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
@@ -30,6 +31,7 @@ class Product extends Model
         'trxID',
     ];
 
+    protected $table = 'products';
 
 
     /**
@@ -44,9 +46,16 @@ class Product extends Model
         'total_price' => 'double',
     ];
 
-    public function isVerified(): bool
-    {
+    public function isVerified(): bool {
         return $this->verified_at !== null;
+    }
+
+    public function isProvisioned(): bool {
+        return $this->provisioned_at !== null;
+    }
+
+    public function instance(): HasOne {
+        return $this->hasOne(Instance::class);
     }
 
     /**
@@ -75,6 +84,12 @@ class Product extends Model
         $this->verified_at = now();
         $this->verified_by = Auth::id();
         $this->save(); 
+    }
+
+    public function provisioned()
+    {
+        $this->provisioned_at = now();
+        $this->save();
     }
 
 }

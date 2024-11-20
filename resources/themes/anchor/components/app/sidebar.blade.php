@@ -22,15 +22,15 @@
                         <x-logo class="w-auto h-7" />
                     </a>
                 </div>
-                <div class="flex items-center px-4 pt-1 pb-3">
+                {{-- <div class="flex items-center px-4 pt-1 pb-3">
                     <div class="relative flex items-center w-full h-full rounded-lg">
                         <x-phosphor-magnifying-glass class="absolute left-0 w-5 h-5 ml-2 text-gray-400 -translate-y-px" />
                         <input type="text" class="w-full py-2 pl-8 text-sm border rounded-lg bg-zinc-200/70 focus:bg-white duration-50 dark:bg-zinc-950 ease border-zinc-200 dark:border-zinc-700/70 dark:ring-zinc-700/70 focus:ring dark:text-zinc-200 dark:focus:ring-zinc-700/70 dark:focus:border-zinc-700 focus:ring-zinc-200 focus:border-zinc-300 dark:placeholder-zinc-400" placeholder="Search">
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="flex flex-col justify-start items-center px-4 space-y-1.5 w-full h-full text-slate-600 dark:text-zinc-400">
-                    <x-app.sidebar-link href="/dashboard" icon="phosphor-stack" :active="Request::is('dashboard')">Dashboard</x-app.sidebar-link>
+                    {{-- <x-app.sidebar-link href="/dashboard" icon="phosphor-stack" :active="Request::is('dashboard')">Dashboard</x-app.sidebar-link> --}}
                     <x-app.sidebar-dropdown text="Servers" icon="phosphor-cloud" id="server_dropdown" :active="(Request::is('server'))" :open="(Request::is('server') || Request::is('server/buy') || Request::is('project_c')) ? '1' : '0'">
                         <x-app.sidebar-link href='/server' icon="phosphor-cube" :active="(Request::is('server'))">My Server</x-app.sidebar-link>
                         <x-app.sidebar-link href='/server/buy' icon="phosphor-cube" :active="(Request::is('server/buy'))">Buy</x-app.sidebar-link>
