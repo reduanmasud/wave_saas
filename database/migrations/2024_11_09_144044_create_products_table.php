@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('servers', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('server_name');
+            $table->string('product_name');
             $table->uuid('uuid')->unique();
             $table->float('hourly_price');
             $table->string('slug');
             $table->string('ram');
             $table->string('vcpu');
             $table->string('disk_storage');
-            $table->string('server_provider');
+            $table->string('product_provider');
             $table->string('provider_price');
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('servers');
+        Schema::dropIfExists('products');
     }
 };
