@@ -90,7 +90,8 @@ class PluginManager
     {
         $path = resource_path('plugins/installed.json');
         if (!File::exists($path)) {
-            \Log::warning("installed.json does not exist at: {$path}");
+            //TODO: Need to fix later
+            // \Log::warning("installed.json does not exist at: {$path}");
             return [];
         }
         return File::json($path);
