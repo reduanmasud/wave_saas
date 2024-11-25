@@ -32,8 +32,8 @@
                 <div class="flex flex-col justify-start items-center px-4 space-y-1.5 w-full h-full text-slate-600 dark:text-zinc-400">
                     {{-- <x-app.sidebar-link href="/dashboard" icon="phosphor-stack" :active="Request::is('dashboard')">Dashboard</x-app.sidebar-link> --}}
                     <x-app.sidebar-dropdown text="Servers" icon="phosphor-cloud" id="server_dropdown" :active="(Request::is('server'))" :open="(Request::is('server') || Request::is('server/buy') || Request::is('project_c')) ? '1' : '0'">
-                        <x-app.sidebar-link href='/server' icon="phosphor-cube" :active="(Request::is('server'))">My Server</x-app.sidebar-link>
-                        <x-app.sidebar-link href='/server/buy' icon="phosphor-cube" :active="(Request::is('server/buy'))">Buy</x-app.sidebar-link>
+                        <x-app.sidebar-link href='/servers' icon="phosphor-cube" :active="(Request::is('server'))">My Server</x-app.sidebar-link>
+                        <x-app.sidebar-link href='/products/buy' icon="phosphor-cube" :active="(Request::is('server/buy'))">Buy</x-app.sidebar-link>
                     </x-app.sidebar-dropdown>
 
                     {{-- <x-app.sidebar-dropdown text="Servers" icon="phosphor-stack" id="projects_dropdown" :active="(Request::is('projects'))" :open="(Request::is('project_a') || Request::is('project_b') || Request::is('project_c')) ? '1' : '0'">
